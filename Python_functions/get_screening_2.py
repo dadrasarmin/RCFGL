@@ -65,7 +65,7 @@ def get_diff_W(expr1,expr2,s=2):
     lam1 = ((s*np.sqrt(sigma1[i]*np.log(p)/n1)))    
     x1_s = (x1-np.mean(x1,axis = 0)).T*(1/(np.std(x1, axis = 0)))[:, np.newaxis]
     y1_s = (y1-np.mean(y1,axis = 0))
-    regr = ElasticNet(alpha = lam1,l1_ratio = 1,fit_intercept = False,random_state=0, normalize = False)
+    regr = ElasticNet(alpha = lam1,l1_ratio = 1,fit_intercept = False,random_state=0)
     regr.fit(x1_s.T,y1_s)
     b1[:,i] = np.multiply(1/(np.std(x1, axis = 0)),regr.coef_)
     
@@ -75,7 +75,7 @@ def get_diff_W(expr1,expr2,s=2):
     lam2 = (s*np.sqrt(sigma2[i]*np.log(p)/n2))
     x2_s = (x2-np.mean(x2,axis = 0)).T*(1/(np.std(x2, axis = 0)))[:, np.newaxis]
     y2_s = (y2-np.mean(y2,axis = 0))
-    regr = ElasticNet(alpha = lam2,l1_ratio = 1,fit_intercept = False,random_state=0, normalize = False)
+    regr = ElasticNet(alpha = lam2,l1_ratio = 1,fit_intercept = False,random_state=0)
     regr.fit(x2_s.T,y2_s)
     b2[:,i] = np.multiply(1/(np.std(x2, axis = 0)),regr.coef_)
 
