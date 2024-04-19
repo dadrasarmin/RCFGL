@@ -20,6 +20,16 @@
 
 * We recommend using Anaconda (https://www.anaconda.com/products/individual) and Python version > 3.9. The package can only be used on a Mac or Linux system not on Windows as the "prox_tv" module is not available for the latter.
 
+### Installation using Mamba (or conda)
+
+```
+mamba create -n rcfgl -c conda-forge python igl pywavelets matplotlib networkx cppyy blas lapack gcc gxx
+mamba activate rcfgl
+pip install --no-cache-dir  prox_tv
+git clone https://github.com/sealx017/RCFGL.git
+mamba install pandas scikit-learn numpy
+```
+
 ### Codes used in the paper
 - In the folder named "Codes_used_in_paper", we have provided the fully commented codes used to simulate the datasets, to run the methods, and to extract the results of the main paper. 
 
